@@ -1,0 +1,240 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	
+	<div class="container mt-5 pt-5">
+		<div class="row">
+			<div class="col-lg-5 mb-4">
+				<h1 style="color: #000000B0;">Start your event with
+					us in three steps!</h1>
+				<p class="fs-5" style="color: #00000075;">Your event is few clicks away from being published
+					by following these steps!</p>
+				<div class="d-flex">
+					<a href="reserve.html" class="btn rounded-0 text-white d-flex" style="background-color: #51CC4A;"> Reserve
+						Spot
+						<i class="bi bi-arrow-right ms-3"></i></a>
+					<a href="{% url 'contact' %}" class="btn rounded-0 bg-white ms-4 d-flex"
+						style="color: #51CC4A; border-color: #51CC4A;">
+						Contact
+						us <i class="bi bi-arrow-right ms-3"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="row gap-2">
+					<!-- 1st card -->
+					<div class="col-lg-4">
+						<div class="card border-0 shadow p-2">
+							<div>
+								<span class="rounded-circle" style="background-color: #51CC4A5E; padding: 9px;">
+									<span><i class="bi bi-person-circle" style="color: #51CC4A;"></i></span>
+								</span>
+								<span class="float-end fw-semibold fs-5" style="color: #000000B0;">Create
+									Account</span>
+							</div>
+							<p class="pt-3 fw-semibold" style="color: #000000B0;">Make your first step by creating an
+								account to
+								manage
+								events.
+							</p>
+						</div>
+					</div>
+					<!-- 2nd card -->
+					<div class="col-lg-4">
+						<div class="d-flex justify-between">
+							<div class="card border-0 shadow p-2">
+								<div class="d-flex justify-between">
+									<span class="rounded-circle p-3" style="background-color: #EC2F2F26;">
+										<span><i class="bi bi-pencil-square" style="color: #EC2F2F;"></i></span>
+									</span>
+									<span class="float-end fw-semibold fs-5"
+										style="color: #000000B0;">Payment<br>Plan</span>
+								</div>
+								<p class="pt-3 fw-semibold" style="color: #000000B0;">Enroll to a payment plan that
+									suites your
+									event organization.
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- 3rd card -->
+					<div class="col-lg-4">
+						<div class="d-flex justify-between">
+							<div class="card border-0 shadow p-2">
+								<div class="d-flex justify-between">
+									<span class="rounded-circle p-3" style="background-color: #07376326;">
+										<span><i class="bi bi-hand-thumbs-up-fill" style="color: #073763;"></i></span>
+									</span>
+									<span class="float-end fw-semibold fs-5" style="color: #000000B0;">Enjoy
+										schedules</span>
+								</div>
+								<p class="pt-3 fw-semibold" style="color: #000000B0;">Schedule your own custom events on
+									a click of
+									a button.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row p-5 text-center">
+				<div class="col-lg-6 offset-lg-3">
+					<h2 style="color: #000000C4;">Everyday we change our lives</h2>
+					<p>Meet your event goals now. Enroll to your desired plan and learn from the best.</p>
+					<input type="text" class="form-control px-5 py-3 rounded-5"
+						placeholder="Search event near you ..." />
+				</div>
+			</div>
+			<div class="row">
+				<h5 class="p-0" style="color: #000000C7;">Frequently Asked Questions</h5>
+				<div class="float-start" style="background-color: #51CC4A; height: 3px; width: 145px;">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="p-5 mt-3" style="background-color: #51CC4A;">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="accordion" id="accordionExample">
+					<div class="accordion-item rounded-0">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								I can't find my ticket ?
+							</button>
+						</h2>
+						<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+							<div class="accordion-body" style="color: #000000B2;">
+								When you order tickets on Bayden, a confirmation is sent to the email address you
+								entered for the order
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item rounded-0">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+								How do I get a refund ?
+							</button>
+						</h2>
+						<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+							<div class="accordion-body" style="color: #000000B2;">
+								Refund can be issued upon proof of payment information na dby contacting organizer.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item rounded-0">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+								I have a question about an event ?
+							</button>
+						</h2>
+						<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+							<div class="accordion-body" style="color: #000000B2;">
+								All event related questions can be directed through Contact us section.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item rounded-0">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+								What information is included on your tickets
+							</button>
+						</h2>
+						<div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+							<div class="accordion-body" style="color: #000000B2;">
+								Event ticket include information such as: Your name, email address, contact details such
+								as phone number.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="accordion" id="accordionExample2">
+					<div class="accordion-item rounded-0">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+								Why tickets might be missing ?
+							</button>
+						</h2>
+						<div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+							<div class="accordion-body" style="color: #000000B2;">
+								<ul>
+									<li>
+										<strong>Incorrect email address:</strong> You’re logged into Eventbrite using a
+										different email address
+										than what you used to place the order or there’s a typo in the email address.
+									</li>
+									<li>
+										<strong>Email deliverability:</strong> The confirmation was sent to your
+										junk/spam folder or was
+										unable
+										to be delivered.
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item rounded-0">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+								What to do if your tickets are missing
+							</button>
+						</h2>
+						<div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+							<div class="accordion-body" style="color: #000000B2;">
+								Contact the event organizer to have them look up your order and resend your confirmation
+								email.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item rounded-0">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+								Refunds for postponed or cancelled events
+							</button>
+						</h2>
+						<div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+							<div class="accordion-body" style="color: #000000B2;">
+								<ul>
+									<li>
+										<strong>Incorrect email address:</strong> You’re logged into Eventbrite using a
+										different email address than what you used to place the order or there’s a typo
+										in
+										the email address.
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item rounded-0">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+								Change the event and time
+							</button>
+						</h2>
+						<div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+							<div class="accordion-body" style="color: #000000B2;">
+								You can change the date and time of your event in Basic Info. Scroll to "Date and Time"
+								and update the "Starts" and "Ends" fields. Then save your changes.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-white text-center pt-5">
+			<h4>Still have a question?</h4>
+			<a href="{% url 'contact' %}" class="btn rounded-5 px-5 bg-sucsess"
+				style="background-color: #ffffff; color: #51CC4A;">
+				Contact Us
+			</a>
+		</div>
+	</div>
+{% endblock content %}

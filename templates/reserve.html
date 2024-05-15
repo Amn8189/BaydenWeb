@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<div class="text-white " style="background-color: #51CC4A;">
+		<div class="container pt-5">
+			<div class="row">
+				<div class="col-lg-9">
+					<h1>Reserve a spot at the event of your<br>
+						choice!</h1>
+					<div class="row mt-5 pb-3">
+						<div class="col-lg-4">
+							<a href="#" class="btn rounded-5 bg-white" style="color: #51CC4A;"><i
+								class="bi bi-hand-thumbs-up-fill fs-3 align-middle"></i> Convenient</a>
+						</div>
+						<div class="col-lg-4">
+							<a href="#" class="btn rounded-5 bg-white" style="color: #51CC4A;"><i
+								class="bi bi-stopwatch-fill fs-3 align-middle"></i> Faster</a>
+						</div>
+						<div class="col-lg-4">
+							<a href="#" class="btn rounded-5 bg-white" style="color: #51CC4A;"><i
+								class="bi bi-lock-fill fs-3 align-middle"></i> Secure</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form method="post">
+		{% csrf_token %}
+		<div class="container py-5">
+			<div class="row">
+				<div class="col-lg-6">
+					<label class="form-label">First Name <span style="color: #EC2F2F;">*</span></label>
+					<input type="text" name="firstname" class="form-control rounded-5" />
+				</div>
+				<div class="col-lg-6">
+					<label class="form-label">Last Name <span style="color: #EC2F2F;">*</span></label>
+					<input type="text" name="lastname" class="form-control rounded-5" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<label class="form-label">Email <span style="color: #EC2F2F;">*</span></label>
+					<input type="email" name="email" class="form-control rounded-5" />
+				</div>
+				<div class="col-lg-6">
+					<label class="form-label">Company Name <span style="color: #EC2F2F;">*</span></label>
+					<input type="text" name="company_name" class="form-control rounded-5" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<label class="form-label">Country/Region <span style="color: #EC2F2F;">*</span></label>
+					<select class="form-select rounded-5" name="country">
+						<option selected disabled>Select your country</option>
+						<option>Sudan</option>
+						<option>South Sudan</option>
+						<option>Eritrea</option>
+						<option>Djibouti</option>
+						<option>Somalia</option>
+						<option>Kenya</option>
+						<option>Tanzania</option>
+						<option>Uganda</option>
+						<option>Rwanda</option>
+						<option>Burundi</option>
+					</select>
+
+				</div>
+				<div class="col-lg-6">
+					<label class="form-label">Job Title <span style="color: #EC2F2F;">*</span></label>
+					<input type="text" name="job_title" class="form-control rounded-5" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<label class="form-label">Phone Number <span style="color: #EC2F2F;">*</span></label>
+					<input type="tel" name="phone_number" class="form-control rounded-5" />
+				</div>
+				<div class="col-lg-6">
+					<label class="form-label">Gender <span style="color: #EC2F2F;">*</span></label>
+					<select class="form-select rounded-5" name="gender">
+						<option selected disabled>Select your gender</option>
+						<option>Male</option>
+						<option>Female</option>
+						<option>Prefer not to say</option>
+					</select>
+				</div>
+			</div>
+			<button type="submit" class="btn px-5 mt-5 rounded-5 text-white fs-5 fw-semibold"
+				style="background: #51CC4A;">Submit
+				Ticket <i class=" bi bi-arrow-right"></i></button>
+		</div>
+	</form>
+{% endblock content %}

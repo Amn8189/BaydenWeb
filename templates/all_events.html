@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <section class="container">
+        <div class="row" id="events">
+            {% for myevent in events %}
+            <div class="col-lg-3">
+                <div class="card border-0 shadow">
+                    <img src="{{ myevent.image.url }}">
+                    <div class="card-body">
+                        <h4 class="fw-light" style="color: #073763;">{{ myevent.name }}</h4>
+                        <p class="text-xs fw-light" style="color: #000000B0;">The Forum will not just be a culmination
+                        of year-long activities,
+                        </p>
+                        <span class="fw-semibold" style="color: #51CC4A; font-size: 10px;">12th Dec, 2023, 9:00AM</span>
+                        <p style="color: #00000091;"><i class="bi bi-geo-alt-fill" style="color: #073763;"></i> Sarit Center, Nairobi</p>
+                        <a href="reserve/{{myevent.pk}}" class="btn rounded-0 text-white" style="background: #51CC4A;">Book your ticket <i class=" bi   bi-box-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="text-center mt-3">
+        <p><{{events.number}} of {{events.paginator.num_pages}}></p>
+
+        {% if events.has_previous %}
+            <a href="?page={{ events.previous_page_number }}" class="btn btn-dark shadow-lg rounded-3"> <i class="bi bi-arrow-left-square"></i> </a>
+        {% endif %}
+
+        {% if events.has_next %}
+            <a href="?page={{ events.next_page_number }}" class="btn btn-dark shadow-lg rounded-3"> <i class="bi bi-arrow-right-square"></i> </a>
+        {% endif %}
+    </section>
+
+{% endblock content %}

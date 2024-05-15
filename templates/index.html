@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<div class="container my-5 pt-5">
+		<div class="row">
+			<div class="col-lg-6">
+				<h1>We make your dream
+					events happen!</h1>
+				<p class="fs-5" style="color: #807f7f;">We are committed to providing and offering
+					highly standard, most effective events platform!</p>
+				<div class="d-flex">
+					<a href="#events" class="btn rounded-0 text-white" style="background-color: #51CC4A;">
+						Get Ticket <i class="bi bi-arrow-right ms-3"></i>
+					</a>
+					<a href="{% url 'contact' %}" class="btn rounded-0 bg-white ms-4" style="color: #51CC4A; border-color: #51CC4A;"> 
+						Contact Us <i class="bi bi-arrow-right ms-3"></i>
+					</a>
+				</div>
+				<!-- LINK TO CREATE EVENTS -->
+				<a href="{% url 'create_event' %}" class="btn btn-warning text-white rounded-5 fs-4 mt-3 ms-2 px-5" > 
+					Create Event <i class="bi bi-arrow-right ms-3"></i>
+				</a>
+			</div>
+			<div class="col-lg-6">
+				<img src="{%static 'Images/image 1.png' %}" class="img-fluid">
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<p style="color: #00000091">Everyday we help the worlds most leading brands create their most<br>engaging event.
+		</p>
+		<div>
+			<img src="{%static 'Images/image 2.png' %}">
+			<img src="{%static 'Images/image 3.png' %}">
+			<img src="{%static 'Images/image 4.png' %}">
+			<img src="{%static 'Images/image 5.png' %}">
+			<img src="{%static 'Images/image 6.png' %}">
+		</div>
+	</div>
+	<div class="container mb-5">
+		<h3>Upcoming Events</h3>
+		<div style="background: #51CC4A; width: 80%;"></div>
+		<div class="row" id="events">
+			{% for myevent in events %}
+			<div class="col-lg-3">
+				<div class="card border-0 shadow">
+					<img src="{{ myevent.image.url }}">
+					<div class="card-body">
+						<h4 class="fw-light" style="color: #073763;">{{ myevent.name }}</h4>
+						<p class="text-xs fw-light" style="color: #000000B0;">The Forum will not just be a culmination
+							of year-long activities,
+						</p>
+						<span class="fw-semibold" style="color: #51CC4A; font-size: 10px;">12th Dec, 2023, 9:00AM</span>
+						<p style="color: #00000091;"><i class="bi bi-geo-alt-fill" style="color: #073763;"></i> Sarit
+							Center, Nairobi</p>
+						<a href="reserve/{{myevent.pk}}" class="btn rounded-0 text-white" style="background: #51CC4A;">Book your ticket <i
+								class=" bi bi-box-arrow-up-right"></i></a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock content %}
