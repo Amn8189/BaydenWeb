@@ -1,4 +1,4 @@
-from django.forms import Form, ModelForm, TextInput, FileInput
+from django.forms import Form, ModelForm, TextInput, FileInput, EmailInput, PasswordInput
 from django import forms
 from .models import Event, Organizer
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
@@ -46,8 +46,17 @@ class OrganizerCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Organizer
         fields = ('firstname', 'secondname', 'email', 'phone_number') + UserCreationForm.Meta.fields
+        widgets = {"firstname": TextInput(attrs={ "class":"form-control rounded-pill"}),
+                   "secondname": TextInput(attrs={ "class":"form-control rounded-pill"}),
+                   "email": EmailInput(attrs={ "class":"form-control rounded-pill"}),
+                   "phone_number": TextInput(attrs={ "class":"form-control rounded-pill"}),
+                   "username": TextInput(attrs={ "class":"form-control rounded-pill"}),
+                   "password1": PasswordInput(attrs={ "class":"form-control"}),
+                   "password2": PasswordInput(attrs={ "class":"form-control"}),
+                   }
 
 class OrganizerChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
         model = Organizer
         fields = UserChangeForm.Meta.fields
+        

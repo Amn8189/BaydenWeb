@@ -2,10 +2,44 @@
 {% load static %}
 {% block content %}
 
-    <form method="POST" class="p-3">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-    </form>
+<div class="container">
+    <section class="d-flex justify-content-center">
+        <div class="card my-5 shadow-lg border-1 border-dark" style="width: 75%">
+            <section class="card-header text-center text-white pt-3" style="background-color: #073763;">
+                <h2>WELCOME</h2>
+            </section>
+            <form method="POST" class="p-4">
+                {% csrf_token %}
+                <div class="row text-center fs-5 mb-3">
+                    <div class="col-lg-6">
+                        <label for="firstname" class="form-label">First Name <span style="color: #51CC4A;">*</span></label>
+                        {{form.firstname}}
+                        <label for="username" class="form-label">Username <span style="color: #51CC4A;">*</span></label>
+                        {{form.username}}
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="secondname" class="form-label">Second Name <span style="color: #51CC4A;">*</span></label>
+                        {{form.secondname}}
+                        <label for="email" class="form-label">Email <span style="color: #51CC4A;">*</span></label>
+                        {{form.email}}
+                    </div>
+                </div>
+                <div class="d-flex flex-column text-center fs-5 mb-3">
+                    <label for="password1" class="form-label">Password <span style="color: #51CC4A;">*</span></label>
+                    {{form.password1}}
+                    <label for="password2" class="form-label">Confirm Password <span style="color: #51CC4A;">*</span></label>
+                    {{form.password2}}
+                </div>
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <button type="submit" class="btn btn-success rounded-4" style="background-color: #51CC4A;">Sign Up</button>
+                    <p class="mx-2 mt-3">or</p>
+                    <a href="{% url 'login' %}" style="color: #51CC4A;">Login</a>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>
 
 {% endblock content %}
