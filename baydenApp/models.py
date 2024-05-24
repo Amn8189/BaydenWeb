@@ -11,7 +11,7 @@ class Subscriber(models.Model):
 class Organizer(AbstractUser):
     firstname = models.CharField(max_length=20)
     secondname = models.CharField(max_length=20)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     phone_number = models.CharField(max_length=20)
 
 class Event(models.Model):

@@ -51,12 +51,14 @@ class OrganizerCreationForm(UserCreationForm):
                    "email": EmailInput(attrs={ "class":"form-control rounded-pill"}),
                    "phone_number": TextInput(attrs={ "class":"form-control rounded-pill"}),
                    "username": TextInput(attrs={ "class":"form-control rounded-pill"}),
-                   "password1": PasswordInput(attrs={ "class":"form-control"}),
-                   "password2": PasswordInput(attrs={ "class":"form-control"}),
+                   "password1": PasswordInput(attrs={ "class":"form-control rounded-pill"}),
+                   "password2": PasswordInput(attrs={ "class":"form-control rounded-pill"}),
                    }
 
 class OrganizerChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
         model = Organizer
         fields = UserChangeForm.Meta.fields
-        
+        widgets = {"username": TextInput(attrs={ "class":"form-control rounded-pill" }),
+                   "password": PasswordInput(attrs={ "class":"form-control rounded-pill" }),
+                   }

@@ -4,6 +4,8 @@ from django.http import HttpResponse, HttpRequest
 from .forms import SubscriberForm, AttendeeForm, EventForm
 from .tasks import add_two_numbers, sendmail, send_new_event_details
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 # Create your views here.
 def homepage(request):
@@ -77,8 +79,11 @@ def create_event(request :HttpRequest):
     event_form = EventForm()
     if request.method == "POST":
         event_form = EventForm(request.POST, files=request.FILES)
+        # event_form.organizer = request.user
         if event_form.is_valid():
-            new_event = event_form.save()
+            new_event = event_form.save(commit="false")
+            new_event.organizer = request.user
+            new_event.save()
             # send_new_event_details.delay(new_event.pk)
         else:
             print(event_form.errors)
@@ -117,3 +122,7 @@ def all_events(request):
 
 
     return render(request, "all_events.html", {"events" : page_events})
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')

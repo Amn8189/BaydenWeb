@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import homepage, index, reserve, create_event, SignupView, about, contact, all_events
+from .views import homepage, index, reserve, create_event, SignupView, about, contact, all_events, logout_view
 
 #Transforming method to url
 urlpatterns = [
@@ -10,6 +10,7 @@ urlpatterns = [
     path("about/", about, name="about"),
     path("contact/", contact, name="contact"),
     path("all_events/", all_events, name="all_events"),
+    path("logout/", logout_view, name="logout"),
 ]
 
 
