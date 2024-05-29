@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
 
 # Create your models here.
 class Subscriber(models.Model):
@@ -20,6 +21,8 @@ class Event(models.Model):
     image = models.ImageField(upload_to='Images/', blank=False)
     time_of_attendance = models.DateTimeField(default = now)
     organizer = models.ForeignKey(Organizer, models.CASCADE, default=1)
+    def get_absolute_url(self):
+        return reverse('index')
 
 class Attendee(models.Model):
     firstname = models.CharField(max_length=50)
