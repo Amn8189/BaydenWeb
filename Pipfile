@@ -9,6 +9,7 @@ pillow = "*"
 redis = "*"
 celery = "*"
 resend = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
