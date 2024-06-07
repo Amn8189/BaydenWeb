@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["bayden.kuazonegroup.com"]
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',         #new
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',               #new
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -88,6 +90,20 @@ DATABASES = {
     }
 }
 
+"""
+DATABASES = { 
+    'default': { 
+    'ENGINE': 'django.db.backends.postgresql', 
+    'NAME': 'indiedb', 
+    'USER': 'petreleven', 
+    'PASSWORD': 'G0HsPD9hRxNE', 
+    'HOST': 'ep-crimson-sea-a5gbi4pv-pooler.us-east-2.aws.neon.tech', 
+    'PORT': '5432', 
+    'OPTIONS': { 'sslmode': 'require', }, } 
+    
+}
+"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -123,10 +139,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+
 import os
-STATIC_ROOT = 'staticfileroot'
-STATIC_URL = 'static/'
+#STATIC_ROOT = 'staticfileroot' new
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/')]
+STATIC_ROOT = "/home/kuazoneg/bayden/staticfilesssss" #new
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" #new
+
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media' 
 #Authentification
